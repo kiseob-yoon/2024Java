@@ -1,0 +1,29 @@
+package sec02.exam01;
+
+import java.util.Random;
+
+public class LottoEx2 {
+
+	public static void main(String[] args) {
+		
+		Random rd = new Random();
+		Random rd2 = new Random();
+		while(true) {
+			int num3 = rd.nextInt(9);
+			int num4 = rd2.nextInt(9);
+			int sum2 = num3 * num4;
+			System.out.println(num3 + "x" + num4);
+			int lotto2 = rd.nextInt(9);
+			if(lotto2 == sum2) {
+				System.out.println("정답입니다.");
+				break;
+			} else {
+				System.out.println("틀렸습니다. 다른 문제를 풀어보세요");
+			}
+		}
+
+		
+	}
+	
+
+}

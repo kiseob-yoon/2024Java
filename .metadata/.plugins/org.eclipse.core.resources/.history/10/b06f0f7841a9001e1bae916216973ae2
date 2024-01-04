@@ -1,0 +1,24 @@
+package sec03.exam01;
+
+import java.util.Scanner;
+
+public class Gugudan {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		int number = 9;
+		
+		System.out.println("단을 입력하세요:");
+		int dan = scanner.nextInt();
+		
+		for(; dan <=number; dan++) {
+			for(int j = 1; j <=number; j++) {
+				System.out.printf("%d X %d = %d\n",dan, j, dan * j);
+			}
+			
+		}
+
+	}
+
+}

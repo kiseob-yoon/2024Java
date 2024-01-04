@@ -1,0 +1,21 @@
+package sec03.exam01;
+
+public class VariableInitializationExample {
+
+	public static void main(String[] args) {
+//		int value = 0; //변수 지정할때 초기화(값을 넣기)하지 않으면 임의의 값이 산정되고 이클립스에서는 이를 인지하고 컴파일오류를 발생시킨다.
+//		int result = value + 10;
+//		System.out.println(result);
+		
+		int x = 10;
+		int y = 20;
+		
+		int temp = x;
+		x = y;
+		y = temp;
+		
+		System.out.printf("x는 %d, y는 %d\n", x ,y);
+
+	}
+
+}

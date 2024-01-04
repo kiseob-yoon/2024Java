@@ -1,0 +1,20 @@
+package sec02.exam01;
+
+public class blog {
+
+	public static void main(String[] args) {
+		//타입 변환 문제
+		
+		//문제 1 컴파일 에러가 발생하는 것은?
+		byte byteValue = 10;
+		char charValue = 'A';
+		
+//		int intValue = byteValue;
+		int intValue = charValue;
+//		short shortValue = charValue; //char 타입의 양의 허용 범위가 short 타입보다 더 큼
+//		double doubleValue = byteValue;
+		System.out.println(intValue);
+		
+	}
+
+}

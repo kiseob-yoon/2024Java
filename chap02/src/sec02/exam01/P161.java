@@ -22,7 +22,7 @@ public class P161 {
 			if(pressnumber == 1) {
 				System.out.print("예금액> ");
 				int deposit = scanner.nextInt();
-				balance += deposit;
+				balance += deposit;   
 			} else if(pressnumber == 2) {
 				System.out.print("출금액> ");
 				int withdraw = scanner.nextInt();

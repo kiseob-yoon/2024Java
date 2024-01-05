@@ -1,5 +1,6 @@
 package sec02.exam01;
 
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,6 +8,7 @@ public class LottoCorrect {
 
 	public static void main(String[] args) {
 		// 메소드를 이용한 난수 곱셈
+		
 		for(int i=0; i < 3; i++) {
 			multiplication();
 		}
@@ -21,7 +23,7 @@ public class LottoCorrect {
 	
 	public static void multiplication() {
 		Random random = new Random(); //객체 생성
-		Scanner scan = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);	
 		
 		int num1 = createNumber(random); //메서드 호출 random 객체의 값 반환받아 num1 변수에 대입
 		int num2 = createNumber(random); //메서드 호출 random 객체의 값 반환받아 num2 변수에 대입

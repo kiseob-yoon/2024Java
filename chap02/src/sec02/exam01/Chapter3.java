@@ -2,6 +2,8 @@ package sec02.exam01;
 
 import java.util.Scanner;
 
+import javax.swing.text.html.parser.ParserDelegator;
+
 public class Chapter3 {
 
 	public static void main(String[] args) {
@@ -68,14 +70,31 @@ public class Chapter3 {
 //		
 //		System.out.println("결과:" + total + "(or 결과:무한대)");
 		
-		//10번 문제
-		int var1 = 10;
-		int var2 = 3;
-		int var3 = 14;
-		double var4 = var1 * var1 * var2 + "." + var3);
-		System.out.println("원의 넓이:" + var4);
+//		//10번 문제
+//		int var1 = 10;
+//		int var2 = 3;
+//		int var3 = 14;
+//		double var4 = var1 * var1 * Double.parseDouble(var2 + "." + var3);
+//		System.out.println("원의 넓이:" + var4);
+//		
+//		//12번 문제
+//		int x =10;
+//		int y = 5;
+//		System.out.println((x>7) && (y<=5)); //true
+//		System.out.println((x%3 == 2)|| (y%2 !=1)); //false
 		
+//		//13번 문제
+//		int value =0;
+//		
+//		value += 10;
+//		value -= 10;
+//		value *= 10;
+//		value /= 10;
 		
+		//14번 문제
+		int score = 85;
+		String result = (!(score>90))? "가":"나";
+		System.out.println(result);
 		
 	}
 

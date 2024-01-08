@@ -11,6 +11,7 @@ public class IfElseEx {
 		int score = scanner.nextInt();
 		score = score/10;
 		
+	
 		switch(score) {
 		case 10: //공통된 구문 출력하려면 case 나란히 2개사용
 		case 9:

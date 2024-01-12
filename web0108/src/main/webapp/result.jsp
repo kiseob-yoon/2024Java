@@ -14,7 +14,7 @@
 <%
 for(int i =1; i <= 9; i++){
 %>
-<h2><%=str %> X <%=i %> = <%=i*Integer.parseInt(str) %></h2>
+<h2><%=str %> X <%=i %> = <%=iInteger.parseInt(str) %></h2>
 <%} %>
 </body>
 </html>

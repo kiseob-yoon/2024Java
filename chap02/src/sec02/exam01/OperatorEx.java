@@ -32,6 +32,6 @@ public class OperatorEx {
 		System.out.println("x:" + x + " y:" + y);
 		
 		byte b = 100;
-//		byte reslt = -b; // -1 * b(연산 결과가 정수)
+//		byte reslt = -b; // -1  b(연산 결과가 정수)
 	}
 }

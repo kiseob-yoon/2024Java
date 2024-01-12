@@ -34,7 +34,7 @@ public class Chapter3 {
 //		int var1 = 5;
 //		int var2 = 2;
 //		double var3 = (double)var1 / var2; // int형 대신 double형써서 소수점 반환함
-//		int var4 = (int) (var3 * var2);
+//		int var4 = (int) (var3  var2);
 //		System.out.println(var4);
 //		
 //		//6번 문제
@@ -54,7 +54,7 @@ public class Chapter3 {
 //		int lengTop = 5;
 //		int lengthBottom = 10;
 //		int height = 7;
-//		double area = (lengTop*lengthBottom/2)*height;
+//		double area = (lengToplengthBottom/2)height;
 //		System.out.println(area);
 		
 		//9번 문제
@@ -74,7 +74,7 @@ public class Chapter3 {
 //		int var1 = 10;
 //		int var2 = 3;
 //		int var3 = 14;
-//		double var4 = var1 * var1 * Double.parseDouble(var2 + "." + var3);
+//		double var4 = var1  var1  Double.parseDouble(var2 + "." + var3);
 //		System.out.println("원의 넓이:" + var4);
 //		
 //		//12번 문제
@@ -88,7 +88,7 @@ public class Chapter3 {
 //		
 //		value += 10;
 //		value -= 10;
-//		value *= 10;
+//		value = 10;
 //		value /= 10;
 		
 		//14번 문제

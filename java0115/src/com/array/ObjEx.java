@@ -44,6 +44,21 @@ public class ObjEx {
 		//readObject 메서드는 직렬화된 객체를 읽어와 역직렬화한다. 읽어온 객체는 Object 타입이므로, 원래 객체의 타입으로 캐스팅해야 한다.
 		System.out.println(acc2); //acc2 객체의 toString 메서드가 호출되어 객체의 문자열 표현이 출력됩니다.
 	}
+	
+	Acc acc = new Acc(); 
+	acc.x = 100; 
+	acc.y = "가나다";
+	System.out.println(acc);
+	FileOutputStream fos = new FileOutputStream("c:/temp/acc.db");
+	ObjectOutputStream oos = new ObjectOutputStream(fos); 
+	oos.writeObject(acc); 
+	oos.flush();
+	oos.close();
+	
+	FileInputStream fis = new FileInputStream("c://temp/acc.db");
+	ObjectInputStream ois = new ObjectInputStream(fis);
+	Acc acc2 = (Acc) ois.readObject(); 
+	System.out.println(acc2);
 
 
 }

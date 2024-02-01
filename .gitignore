@@ -1,4 +1,4 @@
 .metadata
-test
-.txt
+test*
+*.txt
 Servers

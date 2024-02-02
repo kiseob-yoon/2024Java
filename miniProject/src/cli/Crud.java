@@ -12,18 +12,16 @@ public class Crud {
 	private static final String ID = "root";
 	private static final String PASS = "mysql";
 	static Scanner scan = new Scanner(System.in);
-	static Connection connection = null;
 	static Statement stmt = null;
-//	static ResultSet rs = null;
 	static String sql = "select * from emp";
 
 	public static void main(String[] args) {
 
 		boolean exit = false;
 		try {
-			connection = DriverManager.getConnection(URL, ID, PASS);
+			Connection connection = DriverManager.getConnection(URL, ID, PASS);
 			stmt = connection.createStatement();
-//			rs = stmt.executeQuery(sql);
+
 
 			while (!exit) {
 				System.out.println("1. 데이터 보기");
@@ -82,8 +80,8 @@ public class Crud {
 				Double sal = rs.getDouble("sal");
 				Double comm = rs.getDouble("comm");
 				int deptno = rs.getInt("deptno");
-				
-				System.out.println(empno + ", " + ename + ", " + job + ", " + mgr + ", " + hiredate + ", " + sal + ", " + comm + ", " + deptno);
+				System.out.println(String.format("%d,%s,%s,%d,%s,%.2f,%.2f,%d",empno,ename,job,mgr,hiredate,sal,comm,deptno));
+		
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -135,8 +133,9 @@ public class Crud {
                 double sal = rs.getDouble("sal");
                 double comm = rs.getDouble("comm");
                 int deptno = rs.getInt("deptno");
-			
-			System.out.println(empno + ", " + ename + ", " + job + ", " + mgr + ", " + hiredate + ", " + sal + ", " + comm + ", " + deptno);
+
+		System.out.println(String.format("%s, %s, %s, %d, %s, %.2f, %.2f ,%d",empno, ename, job, mgr, hiredate, sal, comm, deptno));
+	
 			}
 
 		} catch (SQLException e) {
@@ -147,7 +146,6 @@ public class Crud {
 
 	private static void updateData(Connection connection) {
 		try {
-//			searchData(connection);
 			System.out.println("수정할 정보를 입력해주세요");
 			System.out.print("사원번호:");
 			String empno = scan.nextLine();
@@ -174,7 +172,6 @@ public class Crud {
 	}
 	
 	private static void deleteData(Connection connection) {
-//		searchData(connection);
 		System.out.print("삭제를 원하시면 사원번호를 입력해주세요: ");
 		String empno = scan.nextLine();
 		try {

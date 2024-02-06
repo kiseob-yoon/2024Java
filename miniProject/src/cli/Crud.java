@@ -20,6 +20,10 @@ public class Crud {
 		try {
 			Connection connection = DriverManager.getConnection(URL, ID, PASS);
 			stmt = connection.createStatement();
+<<<<<<< HEAD
+=======
+
+>>>>>>> cf6411e3d1c7309e64c85dc6d7040508aef2754e
 
 			while (!exit) {
 				System.out.println("1. 데이터 보기");
@@ -66,8 +70,13 @@ public class Crud {
 	
 	private static void viewData(Connection connection) {
 		ResultSet rs = null;
+<<<<<<< HEAD
 		try {
 			String sql ="select * from emp";
+=======
+		try {	
+			String sql = "select * from emp";
+>>>>>>> cf6411e3d1c7309e64c85dc6d7040508aef2754e
 			rs = stmt.executeQuery(sql);
 			while(rs.next()) { //레코드를 넘겨주는 역할(next)
 				int empno = rs.getInt("empno");
@@ -79,6 +88,10 @@ public class Crud {
 				Double comm = rs.getDouble("comm");
 				int deptno = rs.getInt("deptno");
 				System.out.println(String.format("%d,%s,%s,%d,%s,%.2f,%.2f,%d",empno,ename,job,mgr,hiredate,sal,comm,deptno));
+<<<<<<< HEAD
+=======
+		
+>>>>>>> cf6411e3d1c7309e64c85dc6d7040508aef2754e
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -119,7 +132,11 @@ public class Crud {
 			System.out.print("조회할 정보의 사번을 입력하세요:");
 			String empno = scan.nextLine();
 			String sql = String.format("select empno, ename, job, mgr, hiredate, sal, comm, deptno from emp where empno = '%s'", empno);
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> cf6411e3d1c7309e64c85dc6d7040508aef2754e
             ResultSet rs =stmt.executeQuery(sql);
 			while (rs.next()) {
                 empno = rs.getString("empno");
@@ -130,8 +147,14 @@ public class Crud {
                 double sal = rs.getDouble("sal");
                 double comm = rs.getDouble("comm");
                 int deptno = rs.getInt("deptno");
+<<<<<<< HEAD
 			
                 System.out.println(String.format("%s, %s, %s, %d, %s, %.2f, %.2f ,%d",empno, ename, job, mgr, hiredate, sal, comm, deptno));
+=======
+
+		System.out.println(String.format("%s, %s, %s, %d, %s, %.2f, %.2f ,%d",empno, ename, job, mgr, hiredate, sal, comm, deptno));
+	
+>>>>>>> cf6411e3d1c7309e64c85dc6d7040508aef2754e
 			}
 
 		} catch (SQLException e) {

@@ -27,7 +27,7 @@ public class LottoCorrect {
 		
 		int num1 = createNumber(random); //메서드 호출 random 객체의 값 반환받아 num1 변수에 대입
 		int num2 = createNumber(random); //메서드 호출 random 객체의 값 반환받아 num2 변수에 대입
-		int multi = num1  num2; 
+		int multi = num1 + num2; 
 		System.out.printf("%d X %d = ?\n", num1, num2);
 		for(;;) {
 			System.out.println("입력>");

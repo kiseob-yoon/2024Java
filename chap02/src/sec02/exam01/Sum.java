@@ -21,7 +21,7 @@ public class Sum {
 		 System.out.println("덧셈 결과:" + result);
 	}
 	public static void multi(int num1, int num2) {
-		 int result = num1  num2;
+		 int result = num1+  num2;
 		 System.out.println("곱셈 결과:" + result);
 	}
 	

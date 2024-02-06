@@ -12,18 +12,14 @@ public class Crud {
 	private static final String ID = "root";
 	private static final String PASS = "mysql";
 	static Scanner scan = new Scanner(System.in);
-	static Connection connection = null;
 	static Statement stmt = null;
-//	static ResultSet rs = null;
-	static String sql = "select * from emp";
 
 	public static void main(String[] args) {
 
 		boolean exit = false;
 		try {
-			connection = DriverManager.getConnection(URL, ID, PASS);
+			Connection connection = DriverManager.getConnection(URL, ID, PASS);
 			stmt = connection.createStatement();
-//			rs = stmt.executeQuery(sql);
 
 			while (!exit) {
 				System.out.println("1. 데이터 보기");
@@ -38,7 +34,6 @@ public class Crud {
 
 				switch (choice) {
 				case "1":
-					sql = "select * from emp";
 					viewData(connection);
 					break;
 				case "2":
@@ -72,6 +67,7 @@ public class Crud {
 	private static void viewData(Connection connection) {
 		ResultSet rs = null;
 		try {
+			String sql ="select * from emp";
 			rs = stmt.executeQuery(sql);
 			while(rs.next()) { //레코드를 넘겨주는 역할(next)
 				int empno = rs.getInt("empno");
@@ -82,8 +78,7 @@ public class Crud {
 				Double sal = rs.getDouble("sal");
 				Double comm = rs.getDouble("comm");
 				int deptno = rs.getInt("deptno");
-				
-				System.out.println(empno + ", " + ename + ", " + job + ", " + mgr + ", " + hiredate + ", " + sal + ", " + comm + ", " + deptno);
+				System.out.println(String.format("%d,%s,%s,%d,%s,%.2f,%.2f,%d",empno,ename,job,mgr,hiredate,sal,comm,deptno));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -102,7 +97,7 @@ public class Crud {
 			int mgr = Integer.parseInt(scan.nextLine());
 			System.out.print("입사일:");
 			String hiredate = scan.nextLine(); 
-			System.out.print("연봉:");
+			System.out.print("월급:");
 			Double sal = Double.parseDouble(scan.nextLine());
 			System.out.print("인센티브:");
 			Double comm = Double.parseDouble(scan.nextLine());
@@ -123,20 +118,20 @@ public class Crud {
 		try {
 			System.out.print("조회할 정보의 사번을 입력하세요:");
 			String empno = scan.nextLine();
-			sql = String.format("select empno, ename, job, mgr, hiredate, sal, comm, deptno from emp where empno = '%s'", empno);
-
+			String sql = String.format("select empno, ename, job, mgr, hiredate, sal, comm, deptno from emp where empno = '%s'", empno);
+			
             ResultSet rs =stmt.executeQuery(sql);
 			while (rs.next()) {
                 empno = rs.getString("empno");
                 String ename = rs.getString("ename");
                 String job = rs.getString("job");
                 int mgr = rs.getInt("mgr");
-                java.sql.Date hiredate = rs.getDate("hiredate");
+                String hiredate = rs.getString("hiredate");
                 double sal = rs.getDouble("sal");
                 double comm = rs.getDouble("comm");
                 int deptno = rs.getInt("deptno");
 			
-			System.out.println(empno + ", " + ename + ", " + job + ", " + mgr + ", " + hiredate + ", " + sal + ", " + comm + ", " + deptno);
+                System.out.println(String.format("%s, %s, %s, %d, %s, %.2f, %.2f ,%d",empno, ename, job, mgr, hiredate, sal, comm, deptno));
 			}
 
 		} catch (SQLException e) {
@@ -147,7 +142,6 @@ public class Crud {
 
 	private static void updateData(Connection connection) {
 		try {
-//			searchData(connection);
 			System.out.println("수정할 정보를 입력해주세요");
 			System.out.print("사원번호:");
 			String empno = scan.nextLine();
@@ -157,16 +151,15 @@ public class Crud {
 			String job = scan.nextLine();
 			System.out.print("mgr:");
 			int mgr = Integer.parseInt(scan.nextLine());
-			System.out.print("연봉:");
+			System.out.print("월급:");
 			Double sal = Double.parseDouble(scan.nextLine());
 			System.out.print("인센티브:");
 			Double comm = Double.parseDouble(scan.nextLine());
 			System.out.print("부서번호:");
 			int deptno = Integer.parseInt(scan.nextLine());
 			
-			sql = "update emp set ename = '"+ename+"',job = '"+job+"', mgr = "+mgr+", sal = "+ sal +",comm ="+comm+",deptno = "+deptno+" where empno = " + empno;
+			String sql = "update emp set ename = '"+ename+"',job = '"+job+"', mgr = "+mgr+", sal = "+ sal +",comm ="+comm+",deptno = "+deptno+" where empno = " + empno;
 			int result = stmt.executeUpdate(sql);
-			
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -174,7 +167,6 @@ public class Crud {
 	}
 	
 	private static void deleteData(Connection connection) {
-//		searchData(connection);
 		System.out.print("삭제를 원하시면 사원번호를 입력해주세요: ");
 		String empno = scan.nextLine();
 		try {

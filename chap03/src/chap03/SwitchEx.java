@@ -3,7 +3,7 @@ package chap03;
 public class SwitchEx {
 
 	public static void main(String[] args) {
-		int num = (int)(Math.random()6)+1; //1~6(소숫점)int형 입혀져서 정수 1~6으로 나옴//+1을 해서 적어도 1이나오고 최대 6까지가능
+		int num = (int)(Math.random()*6)+1; //1~6(소숫점)int형 입혀져서 정수 1~6으로 나옴//+1을 해서 적어도 1이나오고 최대 6까지가능
 		
 		switch(num) { //가장 먼저 생성된 난수를 대입
 		case 1:
@@ -25,7 +25,7 @@ public class SwitchEx {
 			System.out.println("6번이 나왔습니다.");
 			break;
 		}
-		int m = (int)(Math.random()6)+1;
+		int m = (int)(Math.random()*6)+1;
 		System.out.println(m);
 		
 	}

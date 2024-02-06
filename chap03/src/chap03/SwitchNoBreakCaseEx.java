@@ -3,7 +3,7 @@ package chap03;
 public class SwitchNoBreakCaseEx {
 
 	public static void main(String[] args) {
-		int time = (int)(Math.random()4)+8; //난수는 1이안되니 4로는 0~3나오는거고 +8해서 8~11이 출력됨
+		int time = (int)(Math.random()*4)+8; //난수는 1이안되니 4로는 0~3나오는거고 +8해서 8~11이 출력됨
 		System.out.println("[현재 시각]: " + time + "시");
 		
 		switch(time) {

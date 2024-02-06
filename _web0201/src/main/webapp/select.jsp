@@ -24,20 +24,16 @@ ResultSet rs = pstmt.executeQuery(); %>
 <%
 while(rs.next()){ %>
 	<tr>
-	<td><%=rs.getString("ename") %></td>
+	<td>
+	<a href="updateForm.jsp?ename=<%=rs.getString("ename") %>">
+	<%=rs.getString("ename") %></a></td>
 	<td><%=rs.getString("job") %></td>
 	<td><%=rs.getString("sal") %></td>
+	<td><a href="delete.jsp?ename=<%=rs.getString("ename")%>">삭제</a></td>
 	</tr>
 <%} %>
 </table>
-</br>
-<form action="updateDelete.jsp" method="post">
-이름: <input type="text" name="ename"/></br>
-직업: <input type="text" name="job"/></br>
-월급: <input type="text" name="sal"/></br>
-<input type="submit" value="수정"/>
-<input type="submit" value="삭제"/>
-</form>
+
 
 </body>
 </html>

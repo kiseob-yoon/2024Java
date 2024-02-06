@@ -18,7 +18,7 @@ public class Gugudan {
 		int dan = Integer.parseInt(end); // 입력받은값이 q가 아니고 정수형이면 int형으로 변환
 		
 		for(int i= 1; i <=9; i++) {
-				System.out.printf("%d X %d = %d\n",dan, i, dan  i);
+				System.out.printf("%d X %d = %d\n",dan, i, dan);
 				}
 			}		
 		System.out.println("종료"); // 종료 메시지

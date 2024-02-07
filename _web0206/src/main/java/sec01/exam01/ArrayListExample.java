@@ -16,7 +16,7 @@ public class ArrayListExample {
 		System.out.println("총 객체수: " + size);		
 		System.out.println();
 		
-		String skill = list.get(2);
+		String skill = list.get(2); //get메서드를 사용하여 특정 인덱스의 데이터를 가져온다.
 		System.out.println("2: " + skill);
 		System.out.println();
 
